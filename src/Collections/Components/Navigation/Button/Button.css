@@ -1,0 +1,9 @@
+.navElement{
+    padding:10px;
+    margin: 10px;
+}
+.navElement:hover{
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+}
