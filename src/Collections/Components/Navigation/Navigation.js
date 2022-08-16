@@ -1,7 +1,7 @@
 import NavButton from "./Button/Button.js";
 import "./Navigation.css";
 
-const Items = ["Home", "Categories", "Products", "Contact"];
+const Items = ["Home", "Categories", "Contact"];
 
 const NavBar = () => {
     

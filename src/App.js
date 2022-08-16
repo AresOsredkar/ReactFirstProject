@@ -1,14 +1,13 @@
 
 import './App.css';
 import NavigationBar from './Collections/Components/Navigation/Navigation.js';
-import Content from './Collections/Components/Content/Content.js';
+import Category from './Subpages/Category/Category.js';
 
 const App = () => {
-  let wrap =  <div className="App">
-                <NavigationBar />
-                <Content />
-              </div>;
-  return wrap;    
+  return (<div className="App">
+            <NavigationBar />
+            <Category />
+          </div>);   
 }
 
 export default App;
