@@ -1,10 +1,14 @@
+a{
+  all:unset;
+}
 .button {
-    border: 0;
-    border-radius: 8px;
+    border: solid 4px rgba(0,0,0,0);
     color: #000;
     width: 100px;
-    height: 40px;
+    height:100%;
     cursor: pointer;
+    text-align: center;
+    margin:0;
   }
   
   .button-primary {
@@ -18,7 +22,7 @@
   .button:hover {
     transform: scale(0.98);
     opacity: 0.9;
-    box-shadow: 5px 5px 5px #000;
+    border-bottom: solid 4px black;
     transition:all 1s;
   }
   

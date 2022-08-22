@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Card from '../Components/Card';
+import Card from '../Components/Card/Card';
 
 
 const Categories = () => {
@@ -15,7 +15,7 @@ const Categories = () => {
 
     return (<div className="categoryList">
                 {categoryList.map(item => (
-                    <Card key={item.strCategory} className="categories">
+                    <Card key={item.strCategory}>
                         <div>{item.strCategory}<img height="50" src={item.strCategoryThumb} alt={item.strCategory} /></div>   
                         <div className="info">{item.strCategoryDescription}</div>
                     </Card>

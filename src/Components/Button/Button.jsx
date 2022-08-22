@@ -1,7 +1,7 @@
-import "./Button.less"
+import "./Button.scss"
 
-const Button = ({value, buttonType}) => {
-    return <button key={value} id={value} className={`button button-${buttonType}`}>{value}</button>;
+const Button = ({value, buttonType,isNavigation}) => {
+       return (<button key={value} id={value} className={`button button-${buttonType}`}>{value}</button>)
 }
 
 Button.defaultProps = {

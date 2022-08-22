@@ -1,8 +1,9 @@
 import React from 'react'
+import './Card.scss'
 
-function Card({cardContent,children}) {
+function Card({children}) {
   return (
-    <div className={`card card${cardContent}`}>
+    <div className='card'>
         {children}
     </div>
   )

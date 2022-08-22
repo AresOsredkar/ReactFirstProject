@@ -1,0 +1,38 @@
+header {
+  width: 100%;
+  height:88px;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top:0;
+  background-color:#e8b569;
+}
+.menuButton{
+  float:left;
+  margin:10px;
+  display:none;
+}
+.menuButton .active{
+  transform:scale(1.2)
+}
+#navigation{
+  display:flex;
+  justify-content:space-between;
+}
+#navBar{
+  display: flex;
+  justify-content: flex-end;
+  position:sticky;
+  top:0;
+}
+#navBox{
+
+}
+@media screen and (max-width: 550px){
+  #navBar{
+    display:none;
+  }
+  .menuButton{
+    display:block;
+  }
+}
+
