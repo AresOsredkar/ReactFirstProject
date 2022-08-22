@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import "./Category.css";
+import Card from '../Components/Card';
 
 
-const Category = () => {
+const Categories = () => {
     const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
     const [categoryList, setCategoryList] = useState([]);
 
@@ -13,14 +13,14 @@ const Category = () => {
     }, []);
     
 
-    return (<ul>
+    return (<div className="categoryList">
                 {categoryList.map(item => (
-                    <li key={item.strCategory} className="categories">
+                    <Card key={item.strCategory} className="categories">
                         <div>{item.strCategory}<img height="50" src={item.strCategoryThumb} alt={item.strCategory} /></div>   
                         <div className="info">{item.strCategoryDescription}</div>
-                    </li>
+                    </Card>
                 ))}
-        </ul>);
+        </div>);
 }
 
-export default Category;
+export default Categories;

@@ -1,7 +1,12 @@
-import "./Button.css"
+import "./Button.less"
 
-const NavButton = ({vrednost}) => {
-    return <li key={vrednost} id={vrednost} className="navElement">{vrednost}</li>;
+const Button = ({value, buttonType}) => {
+    return <button key={value} id={value} className={`button button-${buttonType}`}>{value}</button>;
 }
 
-export default NavButton;
+Button.defaultProps = {
+    value: 1,
+    buttonType: "primary"
+}
+
+export default Button;

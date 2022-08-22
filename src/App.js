@@ -1,13 +1,23 @@
-import {Routes,Route} from 'react-router-dom'
-import './App.css';
-import NavigationBar from './Components/Navigation/Navigation';
-import Category from './Subpages/Category/Category';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import NavigationBar from './Components/Navigation';
+import Categories from './Subpages/Categories';
+import Home from './Subpages/Home';
+import Meals from './Subpages/Meals';
 
 const App = () => {
-  return (<div className="App">
-            <NavigationBar />
-            <Category />
-          </div>);   
+     
+  return (
+      <Router>
+        <NavigationBar />
+        <div className='container'>
+          <Routes>
+            <Route exact path="/" element={<Home />}/>
+            <Route exact path="/categories" element={<Categories />}/>
+            <Route path="/categories/?" element={<Meals />}/>
+          </Routes>
+        </div>
+      </Router>
+  );
 }
 
 export default App;
