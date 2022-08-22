@@ -1,6 +1,10 @@
 body{
   background-color:blanchedalmond;
 }
+ul{
+  list-style:none;
+}
+
 .App {
   text-align: center;
 }
@@ -38,4 +42,25 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+#navBar{
+  margin:0;
+  width:100%;
+  display: flex;
+  justify-content: space-evenly;
+  position:sticky;
+  top:0;
+  background-color:burlywood;
+}
+
+.navElement{
+  padding:10px;
+  margin: 10px;
+}
+.navElement:hover{
+  background-color: darkslategray;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
 }

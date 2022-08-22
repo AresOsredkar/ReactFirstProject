@@ -1,7 +1,7 @@
-
+import {Routes,Route} from 'react-router-dom'
 import './App.css';
-import NavigationBar from './Collections/Components/Navigation/Navigation.js';
-import Category from './Subpages/Category/Category.js';
+import NavigationBar from './Components/Navigation/Navigation';
+import Category from './Subpages/Category/Category';
 
 const App = () => {
   return (<div className="App">
