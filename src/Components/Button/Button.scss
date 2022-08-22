@@ -1,14 +1,14 @@
 a{
   all:unset;
 }
-.button {
+  .button {
     border: solid 4px rgba(0,0,0,0);
     color: #000;
     width: 100px;
-    height:100%;
     cursor: pointer;
     text-align: center;
     margin:0;
+    line-height: 88px;
   }
   
   .button-primary {
@@ -25,13 +25,20 @@ a{
     border-bottom: solid 4px black;
     transition:all 1s;
   }
+
+  .active{
+    border-bottom: solid 4px black;
+  }
   
   .button:disabled {
     background-color: #cccccc;
     color: #333;
     cursor: auto;
   }
-  
+  .button-hamburger{
+    width:100vw;
+    height:10vh;
+  }
   .button:disabled:hover {
     transform: scale(1);
     opacity: 1;

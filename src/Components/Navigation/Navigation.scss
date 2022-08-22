@@ -2,30 +2,58 @@ header {
   width: 100%;
   height:88px;
   align-items: center;
-  margin-bottom: 30px;
   margin-top:0;
   background-color:#e8b569;
+  position:sticky;
+  top:0;
+  z-index: 10;
 }
 .menuButton{
+  transform:scale(2);
   float:left;
-  margin:10px;
+  margin:auto 10px;
   display:none;
+  cursor:pointer;
 }
 .menuButton .active{
   transform:scale(1.2)
 }
 #navigation{
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
+  margin:0;
 }
 #navBar{
   display: flex;
   justify-content: flex-end;
-  position:sticky;
-  top:0;
+  height:88px;
 }
-#navBox{
-
+.navBoxShown{
+  z-index: 11;
+  display:flex;
+  flex-direction: column;
+  margin:0;
+  height:50vh;
+  transition:height 1s;
+}
+.navBoxHidden{
+  height:0;
+  display:none;
+}
+.settingsBox{
+  z-index: 11;
+  position:sticky;
+  right:0;
+  height:100%;
+  background-color: burlywood;
+  width:200px;
+}
+.logo{
+  margin:5px;
+  cursor:pointer;
+}
+.logo:hover{
+  filter:hue-rotate(180deg)
 }
 @media screen and (max-width: 550px){
   #navBar{

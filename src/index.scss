@@ -145,3 +145,9 @@ input:focus {
   cursor:pointer;
   height:100px;
 }
+
+@media screen and (max-width: 550px){
+  .info{
+    display:none;
+  }
+}
