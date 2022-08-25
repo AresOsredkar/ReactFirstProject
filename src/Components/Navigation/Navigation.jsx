@@ -2,8 +2,9 @@ import '../Button/Button.scss'
 import {NavLink} from 'react-router-dom'
 import './Navigation.scss'
 import {useState} from 'react'
-import {  FaStream } from 'react-icons/fa'
+import {  FaStream, FaTimes } from 'react-icons/fa'
 import meal from '../../Assets/meal.png'
+import SettingsOverlay from '../SettingsOverlay/SettingsOverlay'
 
 const Items = ["Home", "Categories", "Contact"];
 
@@ -13,7 +14,7 @@ const NavigationBar = () => {
 
     const handleDropdownClick = () => setIsMobileMenuExtended((prevState)=>!prevState)
 
-    const handleSettingsClick = () => setIsSettingsMenuExtended((prevState)=>false)
+    const handleSettingsClick = () => setIsSettingsMenuExtended((prevState)=>!prevState)
 
     return (<div id="headerContainer">
                 <div id="navigation">
@@ -28,11 +29,10 @@ const NavigationBar = () => {
                     <FaStream className='menuButton' onClick={handleDropdownClick}/>
                 </div>
                 <div className={`navBox${isMobileMenuExtended ? 'Shown' : 'Hidden'}`}>
+                    <FaTimes className='pointer' style={{position:'absolute',right:'10px',zIndex:'12'}} onClick={handleDropdownClick}/>
                     {Items.map(item => <NavLink key={item} onClick={handleDropdownClick} to={`/${item}`} className='button button-primary button-hamburger'>{item}</NavLink>)}
                 </div>
-                <div id="settingsBox" style={{display: `${isSettingsMenuExtended ? 'flex' : 'none'}`}}>  
-                    Placeholder
-                </div>
+                <SettingsOverlay isMenuShown={isSettingsMenuExtended} handleMenu={handleSettingsClick}/>
             </div>
             );
 }

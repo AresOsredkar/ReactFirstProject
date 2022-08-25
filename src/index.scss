@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+$fontSizes: xs, sm, md, lg, xl;
+
+@each $size in $fontSizes {
+  $index: index($fontSizes,$size);
+  .font-#{$size}{
+    font-size: 8 + ($index * 2px)
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -150,4 +159,13 @@ input:focus {
   .info{
     display:none;
   }
+}
+
+.pointer{
+  cursor:pointer;
+}
+.pointer:hover{
+  transform:scale(1.1);
+  filter:opacity(0.6);
+  transition:all 1s;
 }

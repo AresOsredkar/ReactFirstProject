@@ -22,6 +22,7 @@ header {
   display:flex;
   justify-content:space-evenly;
   margin:0;
+  height:88px;
 }
 #navBar{
   display: flex;
@@ -29,15 +30,16 @@ header {
   height:88px;
 }
 .navBoxShown{
-  z-index: 11;
   display:flex;
-  flex-direction: column;
+  z-index: 11;
   margin:0;
+  flex-direction: column;
   height:50vh;
-  transition:height 1s;
+  transition:all 1s;
 }
 .navBoxHidden{
   height:0;
+  transition:all 1s;
   display:none;
 }
 .settingsBox{

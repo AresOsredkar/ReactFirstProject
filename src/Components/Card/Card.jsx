@@ -1,9 +1,9 @@
 import React from 'react'
 import './Card.scss'
 
-function Card({children}) {
+function Card({children, active,...props}) {
   return (
-    <div className='card'>
+    <div className={`card ${active && 'reverse'}`} {...props}>
         {children}
     </div>
   )

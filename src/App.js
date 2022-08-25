@@ -1,13 +1,18 @@
+import { useContext } from 'react';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import NavigationBar from './Components/Navigation/Navigation';
+import SettingsContext, {SettingsProvider} from './Context/SettingsContext';
 import Categories from './Subpages/Categories';
 import Home from './Subpages/Home';
 import Meals from './Subpages/Meals';
 
 const App = () => {
-     
+
+  
+
   return (
-      <Router>
+    <SettingsProvider>
+      <Router>   
         <header>
           <NavigationBar />
         </header>
@@ -19,6 +24,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
+   </SettingsProvider>
   );
 }
 
