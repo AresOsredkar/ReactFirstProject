@@ -15,7 +15,6 @@
     margin:0;
 }
 .settings{
-    background-color:chocolate;
     display:flex;
     flex-direction:column;
     height:100%;
@@ -31,3 +30,16 @@
     margin:5px;
     padding:5px;
 }
+
+.settings.lightTheme{
+    background-color:rgba(210,105,30);
+    color:#000;
+  }
+.settings.darkTheme{
+    background-color:rgb(46, 45, 45);
+    color:#FFF;
+  }
+.settings.blueTheme{
+    background-color:rgb(18, 18, 136);
+    color:rgb(156, 148, 148)
+  }

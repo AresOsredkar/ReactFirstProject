@@ -1,0 +1,24 @@
+.bodyContainer {
+    width:100%;
+    margin: 0;
+    padding: 100px 30px 0 30px;
+    position: absolute;
+    top: 0;
+    &.lightTheme{
+        background-color:rgba(255,235,205);
+        color:#000;
+      }
+    &.darkTheme{
+        background-color:rgb(73, 72, 72);
+        color:#FFF;
+      }
+    &.blueTheme{
+        background-color:rgb(55, 55, 160);
+        color:rgb(156, 148, 148)
+      }
+}
+  .info{
+    margin: auto;
+    top:0;
+    text-decoration:underline;
+  }

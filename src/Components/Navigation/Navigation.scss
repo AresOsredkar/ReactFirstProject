@@ -2,12 +2,26 @@ header {
   width: 100%;
   height:88px;
   align-items: center;
-  margin-top:0;
-  background-color:#e8b569;
+  margin: {
+    top:0;
+    bottom:0;
+  }
   position:sticky;
   top:0;
   z-index: 10;
+  &.lightTheme{
+    background-color:#e8b569;
+  }
+  &.darkTheme{
+    background-color:#1b1b1a;
+    color:#FFF;
+  }
+  &.blueTheme{
+    background-color:#180dad;
+    color:#FFF;
+  }
 }
+
 .menuButton{
   transform:scale(2);
   float:left;
@@ -18,51 +32,65 @@ header {
 .menuButton .active{
   transform:scale(1.2)
 }
-#navigation{
+.navigation{
   display:flex;
   justify-content:space-evenly;
   margin:0;
   height:88px;
 }
-#navBar{
+.navBar{
   display: flex;
   justify-content: flex-end;
   height:88px;
 }
-.navBoxShown{
-  display:flex;
-  z-index: 11;
-  margin:0;
-  flex-direction: column;
-  height:50vh;
-  transition:all 1s;
+.navBox{
+  &Shown{
+    display:flex;
+    z-index: 11;
+    margin:0;
+    flex-direction: column;
+    height:50vh;
+    transition:all 1s;
+  }
+  &Hidden{
+    height:0;
+    transition:all 1s;
+    display:none;
+  }
+  &Shown.lightTheme{
+    background-color:#e8b569;
+  }
+  &Shown.darkTheme{
+    background-color:#1b1b1a;
+    color:#FFF;
+  }
+  &Shown.blueTheme{
+    background-color:#180dad;
+    color:#FFF;
+  }
 }
-.navBoxHidden{
-  height:0;
-  transition:all 1s;
-  display:none;
-}
+
 .settingsBox{
   z-index: 11;
   position:sticky;
   right:0;
   height:100%;
-  background-color: burlywood;
   width:200px;
 }
+
 .logo{
   margin:5px;
   cursor:pointer;
+  &:hover{
+    filter:hue-rotate(180deg)
+  }
 }
-.logo:hover{
-  filter:hue-rotate(180deg)
-}
+
 @media screen and (max-width: 550px){
-  #navBar{
+  .navBar{
     display:none;
   }
   .menuButton{
     display:block;
   }
 }
-

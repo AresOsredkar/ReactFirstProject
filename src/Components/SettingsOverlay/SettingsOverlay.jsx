@@ -7,11 +7,11 @@ import { useEffect } from 'react'
 
 function SettingsOverlay({isMenuShown,handleMenu}) {
     const [theme, enlargedText, setTheme, setEnlargedText] = useContext(SettingsContext)
-    
+
     let settingsWidth = isMenuShown ? '50%' : '0'
 
     const handleThemeChange = (e) => {
-        setTheme(+e.currentTarget.value)
+        setTheme(e.currentTarget.value)
     }
     const handleEnlargeClick = () => setEnlargedText((prevState) => !prevState)
 
@@ -19,7 +19,7 @@ function SettingsOverlay({isMenuShown,handleMenu}) {
     return (
         <div className='settingsOverlay topLeft' style={{display:`${isMenuShown ? 'block' : 'none'}`}}>
             <div className="overlay topLeft" onClick={handleMenu}></div>
-            <div className="settings topRight" style={{width:`${settingsWidth}`,transition:'width 1s'}}>
+            <div className={`settings topRight ${theme}Theme`} style={{width:`${settingsWidth}`,transition:'width 1s'}}>
                 <FaTimes onClick={handleMenu} className='pointer'/>
                 <Card>
                     <form action='none'>

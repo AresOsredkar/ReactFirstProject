@@ -1,0 +1,15 @@
+.info{
+    display:block;
+  }
+  .infoMenuButton{
+    display:none;
+  }
+
+@media screen and (max-width: 550px){
+    .info{
+      display:none;
+    }
+    .infoMenuButton{
+      display:block;
+    }
+  }

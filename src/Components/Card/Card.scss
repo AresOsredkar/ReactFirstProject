@@ -1,19 +1,21 @@
 .card {
-    background-color: #fff;
+    background-color: rgb(240, 229, 229);
     color: #333;
     border-radius: 15px;
     padding: 40px 50px;
-    margin: 20px 0;
+    margin: 10px;
     position: relative;
   }
 
-  .card.reverse {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
+  .card.lightTheme{
+    background-color:rgb(233, 229, 227);
+    color:#000;
   }
-  
-  .card h2 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
+.card.darkTheme{
+    background-color:rgb(88, 87, 87);
+    color:#FFF;
+  }
+.card.blueTheme{
+    background-color:rgb(66, 66, 199);
+    color:rgb(156, 148, 148)
   }

@@ -1,7 +1,7 @@
 import "./Button.scss"
 
-const Button = ({value, buttonType,isNavigation}) => {
-       return (<button key={value} id={value} className={`button button-${buttonType}`}>{value}</button>)
+const Button = ({value}) => {
+       return (<button key={value} id={value} className={`button`}>{value}</button>)
 }
 
 Button.defaultProps = {
