@@ -1,0 +1,20 @@
+.mealCard{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    width:85vw;
+}
+.composition{
+    width:60%;
+    display:flex;
+    border-bottom:dotted 1px;
+    justify-content:space-between;
+    margin:0;
+}
+.description{
+    width:40%;
+    margin:10px;
+}
+.previewImage{
+    width:180px;
+}

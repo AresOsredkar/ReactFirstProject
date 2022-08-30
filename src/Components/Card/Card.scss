@@ -5,17 +5,30 @@
     padding: 40px 50px;
     margin: 10px;
     position: relative;
+    display:flex;
   }
 
-  .card.lightTheme{
-    background-color:rgb(233, 229, 227);
-    color:#000;
+  .card{
+    &.lightTheme{
+      background-color:rgb(233, 229, 227);
+      color:#000;
+    }
+    &.darkTheme{
+      background-color:rgb(88, 87, 87);
+      color:#FFF;
+    }
+    &.blueTheme{
+      background-color:rgb(66, 66, 199);
+      color:rgb(156, 148, 148)
+    }
   }
-.card.darkTheme{
-    background-color:rgb(88, 87, 87);
-    color:#FFF;
-  }
-.card.blueTheme{
-    background-color:rgb(66, 66, 199);
-    color:rgb(156, 148, 148)
+
+  .card-title{
+    padding: {
+      top: auto;
+      bottom:auto;
+      left:10px;
+      right:10px;
+    }
+    vertical-align: middle;
   }

@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import './Categories.scss'
+import { useNavigate } from 'react-router-dom';
+import { useCallback } from 'react';
 
 
 const Categories = () => {
     const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
     const [categoryList, setCategoryList] = useState([]);
     const [isInfoSpread, setIsInfoSpread] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(apiUrl).then((result) => result.json())
@@ -17,19 +20,50 @@ const Categories = () => {
     
     const handleInfoMenuClick = () => setIsInfoSpread((prevState) => !prevState)
 
+    const handleCategoryClick = useCallback((categoryID) => {
+        var destination = '/meals/' + categoryID
+        navigate(destination)
+    },[navigate])
+
+    const handleSorting = (event) => {
+        console.log(event.target.value)
+        switch(event.target.value){
+            case 'anti-alphabetical':   
+                setCategoryList([...categoryList].reverse());
+                break;
+            case 'alphabetical':    
+                setCategoryList([...categoryList].sort());
+                break;
+            default:
+                setCategoryList(categoryList.slice(0).sort());
+                break;
+        }
+    }
+
     return (<div className="categoryList">
-                {categoryList.map(item => (
-                    <Card key={item.strCategory}>
-                        <h2>{item.strCategory}</h2><img height="50" src={item.strCategoryThumb} alt={item.strCategory} />
-                        <div className="info">{item.strCategoryDescription}</div>
-                        <div className="infoMenuButton">
-                        {isInfoSpread ? 
-                            <FaChevronDown key={item} onClick={handleInfoMenuClick}/> : 
-                            <FaChevronUp key={item} onClick={handleInfoMenuClick}/>                       
-                        }
+                <div className='filters'>
+                            <form>
+                                <select onChange={handleSorting}>
+                                    <option value='alphabetical'>Alphabetical(Ascending)</option>
+                                    <option value='anti-alphabetical'>Alphabetical(Descending)</option>
+                                </select>
+                            </form>
                         </div>
-                        
-                    </Card>
+                {categoryList.map(item => (
+                        <Card key={item.strCategory} className='categoryCard' onClick={() => handleCategoryClick(item.strCategory)}>
+                            <div className="title">
+                                <img height="50" src={item.strCategoryThumb} alt={item.strCategory} />
+                                <h2>{item.strCategory}</h2>
+                            </div>
+                            <div className="info">{item.strCategoryDescription}</div>
+                            <div className="infoMenuButton">
+                            {isInfoSpread ? 
+                                <FaChevronDown key={item} onClick={() => handleInfoMenuClick}/> : 
+                                <FaChevronUp key={item} onClick={() => handleInfoMenuClick}/>                       
+                            }
+                            </div>
+                            
+                        </Card>
                 ))}
         </div>);
 }

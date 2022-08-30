@@ -15,6 +15,7 @@ function SettingsOverlay({isMenuShown,handleMenu}) {
     }
     const handleEnlargeClick = () => setEnlargedText((prevState) => !prevState)
 
+    
 
     return (
         <div className='settingsOverlay topLeft' style={{display:`${isMenuShown ? 'block' : 'none'}`}}>

@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-$fontSizes: xs, sm, md, lg, xl;
+$thumbnailSizes: xs, sm, md, lg, xl;
 
-@each $size in $fontSizes {
-  $index: index($fontSizes,$size);
-  .font-#{$size}{
-    font-size: 8 + ($index * 2px)
+@each $size in $thumbnailSizes {
+  $i: index($thumbnailSizes, $size);
+  .thumbnail-#{$size}{
+    margin:10px;
+    width:50px + $i * 5;
+    height:50px + $i * 5;
   }
 }
 
@@ -49,6 +51,7 @@ ul {
 }
 
 
+
 .categories{
   cursor:pointer;
   height:100px;
@@ -76,4 +79,4 @@ ul {
   transform:scale(1.1);
   filter:opacity(0.6);
   transition:all 1s;
-}
+}   
