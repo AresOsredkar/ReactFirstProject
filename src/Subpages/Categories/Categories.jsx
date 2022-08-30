@@ -9,12 +9,13 @@ import { useCallback } from 'react';
 const Categories = () => {
     const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
     const [categoryList, setCategoryList] = useState([]);
+    const [filteredCategoryList, setFilteredCategoryList] = useState([]);
     const [isInfoSpread, setIsInfoSpread] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         fetch(apiUrl).then((result) => result.json())
-        .then(category => {setCategoryList(category.categories);})
+        .then(category => {setCategoryList(category.categories);setFilteredCategoryList(category.categories);})
         .catch((error) => console.log("err",error));
     }, []);
     
@@ -26,18 +27,15 @@ const Categories = () => {
     },[navigate])
 
     const handleSorting = (event) => {
-        console.log(event.target.value)
         switch(event.target.value){
-            case 'anti-alphabetical':   
-                setCategoryList([...categoryList].reverse());
-                break;
-            case 'alphabetical':    
-                setCategoryList([...categoryList].sort());
-                break;
-            default:
-                setCategoryList(categoryList.slice(0).sort());
-                break;
+            case 'anti-alphabetical':   setFilteredCategoryList(categoryList.slice(0).reverse())
+                                        break
+            case 'alphabetical':    setFilteredCategoryList(categoryList.slice(0).sort())
+                                    break
         }
+    }
+    const handleSearchBar = (event) => {
+        setFilteredCategoryList(categoryList.filter(category => category.strCategory.toLowerCase().includes(event.target.value.toLowerCase())))
     }
 
     return (<div className="categoryList">
@@ -47,9 +45,10 @@ const Categories = () => {
                                     <option value='alphabetical'>Alphabetical(Ascending)</option>
                                     <option value='anti-alphabetical'>Alphabetical(Descending)</option>
                                 </select>
+                                <input type='text' onChange={handleSearchBar}></input>
                             </form>
                         </div>
-                {categoryList.map(item => (
+                {filteredCategoryList.map(item => (
                         <Card key={item.strCategory} className='categoryCard' onClick={() => handleCategoryClick(item.strCategory)}>
                             <div className="title">
                                 <img height="50" src={item.strCategoryThumb} alt={item.strCategory} />

@@ -22,7 +22,6 @@ const Meals = () => {
     }
 
     const handleSorting = (event) => {
-        console.log(event.target.value)
         switch(event.target.value){
             case 'anti-alphabetical':   setFilteredMeals(meals.slice(0).reverse())
                                         break
